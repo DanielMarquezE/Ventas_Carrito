@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+
+<mat-card style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            Agrega/Modifica La Tienda
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex; justify-content: center;">
+
+            <form [formGroup]="formCliente">
+                <div class="flex" hidden="true">
+                    <mat-form-field>
+                        <mat-label>id</mat-label>
+                        <input matInput formControlName="id">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Sucursal</mat-label>
+                        <input matInput formControlName="sucursal">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Direccion</mat-label>
+                        <input matInput formControlName="direccion">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+                    <button mat-flat-button color="warn" (click)="volver()" style="margin-left: 8px;">Volver</button>
+                </div>
+            </form>
+        
+        </div>
+    </mat-card-content>
+

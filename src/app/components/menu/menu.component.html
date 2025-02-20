@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span>
+        <a routerLink="/inicio" mat-button>
+            <mat-icon>person</mat-icon>Clientes
+        </a>
+    </span>
+    <span>
+        <a routerLink="/listArticulos" mat-button>
+            <mat-icon>inventory</mat-icon>Productos
+        </a>
+    </span>
+    <span>
+        <a routerLink="/listTiendas" mat-button>
+            <mat-icon>store</mat-icon>Sucursales
+        </a>
+    </span>
+    <span>
+        <button mat-icon-button (click)="salir()">
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+    </span>
+</mat-toolbar>

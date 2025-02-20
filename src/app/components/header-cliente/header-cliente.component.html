@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <span>
+        <a routerLink="/stack" mat-button>
+            <mat-icon>view_list</mat-icon>Stack
+        </a>
+    </span>
+    <span>
+        <a routerLink="/compras" mat-button>
+            <mat-icon>list_alt</mat-icon>Compras
+        </a>
+    </span>
+    <span>
+        <a routerLink="/carrito" mat-button>
+            <mat-icon>shopping_cart</mat-icon>Carrito
+        </a>
+    </span>
+    <span>
+        <button mat-icon-button (click)="salir()">
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+    </span>
+</mat-toolbar>

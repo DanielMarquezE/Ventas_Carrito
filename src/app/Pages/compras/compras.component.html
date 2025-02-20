@@ -1,0 +1,53 @@
+<app-header-cliente></app-header-cliente>
+
+<mat-card style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            Lista De Articulos
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="lsitaDeVentas" class="mat-elevation-z2" style="margin-top: 20px;">
+            
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> id </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="CodeProducto">
+              <th mat-header-cell *matHeaderCellDef> CodeProducto </th>
+              <td mat-cell *matCellDef="let element"> {{element.codeProducto}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="NombreCliente">
+              <th mat-header-cell *matHeaderCellDef> NombreCliente </th>
+              <td mat-cell *matCellDef="let element"> {{element.nombreCliente}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="imagen">
+              <th mat-header-cell *matHeaderCellDef> Imagen </th>
+              <td mat-cell *matCellDef="let element"> <img src="{{element.imagen}}" style="width: 150px;"> </td>
+            </ng-container>
+
+              <ng-container matColumnDef="CantidadProducto">
+                <th mat-header-cell *matHeaderCellDef> CantidadProducto </th>
+                <td mat-cell *matCellDef="let element"> {{element.cantidadProducto}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="TotalVenta">
+                <th mat-header-cell *matHeaderCellDef> TotalVenta </th>
+                <td mat-cell *matCellDef="let element"> ${{element.totalVenta}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="FechaVenta">
+                <th mat-header-cell *matHeaderCellDef> FechaVenta </th>
+                <td mat-cell *matCellDef="let element"> {{element.fechaVenta}} </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-card-content>
+  </mat-card>

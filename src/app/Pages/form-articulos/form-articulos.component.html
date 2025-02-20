@@ -1,0 +1,73 @@
+<app-menu></app-menu>
+
+<mat-card style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            Agrega/Modifica El Articulo
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex; justify-content: center;">
+
+            <form [formGroup]="formArticulo">
+                <div class="flex" hidden="true">
+                    <mat-form-field>
+                        <mat-label>id</mat-label>
+                        <input matInput formControlName="id">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Codigo</mat-label>
+                        <input matInput formControlName="codigo">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Descripcion</mat-label>
+                        <input matInput formControlName="descripcion">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Precio</mat-label>
+                        <input matInput formControlName="precio" type="number">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-card style="width: 100%; margin: 50px auto;">
+                        <mat-card-header>
+                            <mat-card-title>
+                                Imagen
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                                <input type="file" (change)="capturarFile($event)">
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Stock</mat-label>
+                        <input matInput formControlName="stock" type="number">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Sucursal</mat-label>
+                        <mat-select name="sucursal" (selectionChange)="onSelected($event)">
+                          @for (sucursal of listTiendas; track sucursal) {
+                            <mat-option [value]="sucursal.id">{{sucursal.sucursal}}</mat-option>
+                          }
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+                    <button mat-flat-button color="warn" (click)="volver()" style="margin-left: 8px;">Volver</button>
+                </div>
+            </form>
+        
+        </div>
+    </mat-card-content>
+</mat-card>

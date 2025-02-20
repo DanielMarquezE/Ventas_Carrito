@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<mat-card style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            Lista De Tiendas
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <button mat-flat-button color="primary" (click)="nuevo()">Nueva Tienda</button>
+
+        <table mat-table [dataSource]="listaTiendas" class="mat-elevation-z2" style="margin-top: 20px;">
+            
+            <ng-container matColumnDef="Id">
+              <th mat-header-cell *matHeaderCellDef> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="Sucursal">
+              <th mat-header-cell *matHeaderCellDef> Sucursal </th>
+              <td mat-cell *matCellDef="let element"> {{element.sucursal}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="Direccion">
+              <th mat-header-cell *matHeaderCellDef> Direccion </th>
+              <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+            </ng-container>
+          
+              <ng-container matColumnDef="Accion">
+                <th mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary" (click)="editar(element)">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button color="warn" (click)="eliminar(element)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+
+    </mat-card-content>
+  </mat-card>

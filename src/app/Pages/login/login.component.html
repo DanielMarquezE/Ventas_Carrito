@@ -1,0 +1,49 @@
+<app-main-header></app-main-header>
+
+
+<mat-card style="width: 70%; margin: 50px auto;">
+    <mat-card-header>
+        <mat-card-title>
+            Login
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z2" style="width: 30%; padding: 30px; margin: 50px auto; display: flex; justify-content: center;">
+            <form [formGroup]="formUser">
+                <div class="flex" hidden="true">
+                    <mat-form-field>
+                        <mat-label>id</mat-label>
+                        <input matInput formControlName="id">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>User Name</mat-label>
+                        <input matInput formControlName="userName">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password">
+                      </mat-form-field>
+                </div>
+                <div class="flex" hidden="true">
+                    <mat-form-field>
+                        <mat-label>isAdmin</mat-label>
+                        <input matInput formControlName="isAdmin">
+                      </mat-form-field>
+                </div>
+                <div class="flex" hidden="true">
+                    <mat-form-field>
+                        <mat-label>idCliente</mat-label>
+                        <input matInput formControlName="idCliente">
+                      </mat-form-field>
+                </div>
+                <div class="flex">
+                    <button mat-flat-button color="primary" (click)="enviar()">Guardar</button>
+                </div>
+            </form>
+        
+        </div>
+    </mat-card-content>
